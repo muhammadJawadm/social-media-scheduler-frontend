@@ -19,28 +19,29 @@ export function Navbar() {
           </Link>
           
           {user && (
-            <nav className="hidden md:flex items-center gap-2">
+            // Make primary navigation visible on all screen sizes; compress label on very small screens via utility classes.
+            <nav className="flex items-center gap-2">
               <Link href="/">
                 <a data-testid="link-dashboard">
                   <Button 
-                    variant={location === '/' ? 'secondary' : 'ghost'} 
+                    variant={location === '/' ? 'secondary' : 'ghost'}
                     size="sm"
-                    className="gap-2"
+                    className="gap-1 px-2"
                   >
                     <LayoutDashboard className="h-4 w-4" />
-                    Dashboard
+                    <span className="hidden xs:inline">Dashboard</span>
                   </Button>
                 </a>
               </Link>
               <Link href="/posts">
                 <a data-testid="link-posts">
                   <Button 
-                    variant={location === '/posts' ? 'secondary' : 'ghost'} 
+                    variant={location === '/posts' ? 'secondary' : 'ghost'}
                     size="sm"
-                    className="gap-2"
+                    className="gap-1 px-2"
                   >
                     <FileText className="h-4 w-4" />
-                    Posts
+                    <span className="hidden xs:inline">Posts</span>
                   </Button>
                 </a>
               </Link>

@@ -1,5 +1,5 @@
 // Simple API helper - with detailed debugging
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/';
+const API_URL = import.meta.env.VITE_API_URL || 'https://social-media-scheduler-g60t.onrender.com/';
 
 export async function apiCall(method: string, endpoint: string, data?: any) {
   const token = localStorage.getItem('token');
